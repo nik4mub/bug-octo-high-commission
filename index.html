@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f5f7fb">
+	<title>Weekly Commission Calculator</title>
+	<link rel="stylesheet" href="style.css">
+
+	
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="brand" aria-label="Commissionly"><span class="brand-mark" aria-hidden="true">↗</span><span class="brand-name">Commissionly</span></div>
+			<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme"><span id="themeIcon" aria-hidden="true">☾</span><span id="themeText">Dark mode</span></button>
+		</header>
+		<main>
+			<section class="intro">
+				<p class="eyebrow">Weekly overview</p>
+				<h1>Sales to commission,<br>made simple.</h1>
+				<p class="description">Enter your sales for each day and your commission rate. Your weekly totals update automatically.</p>
+			</section>
+			<section class="calculator" aria-label="Weekly commission calculator">
+				<h2 class="section-heading"><span>Daily sales</span><span class="currency-note">USD · $</span></h2>
+				<div class="days" id="days">
+					<div class="day-row"><label class="day-name" for="monday-sales">Monday</label><span class="money-input"><span>$</span><input id="monday-sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="Monday sales"></span><label class="off-toggle"><input type="checkbox" aria-label="Off Monday"><span>Off</span></label></div>
+					<div class="day-row"><label class="day-name" for="tuesday-sales">Tuesday</label><span class="money-input"><span>$</span><input id="tuesday-sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="Tuesday sales"></span><label class="off-toggle"><input type="checkbox" aria-label="Off Tuesday"><span>Off</span></label></div>
+					<div class="day-row"><label class="day-name" for="wednesday-sales">Wednesday</label><span class="money-input"><span>$</span><input id="wednesday-sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="Wednesday sales"></span><label class="off-toggle"><input type="checkbox" aria-label="Off Wednesday"><span>Off</span></label></div>
+					<div class="day-row"><label class="day-name" for="thursday-sales">Thursday</label><span class="money-input"><span>$</span><input id="thursday-sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="Thursday sales"></span><label class="off-toggle"><input type="checkbox" aria-label="Off Thursday"><span>Off</span></label></div>
+					<div class="day-row"><label class="day-name" for="friday-sales">Friday</label><span class="money-input"><span>$</span><input id="friday-sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="Friday sales"></span><label class="off-toggle"><input type="checkbox" aria-label="Off Friday"><span>Off</span></label></div>
+					<div class="day-row"><label class="day-name" for="saturday-sales">Saturday</label><span class="money-input"><span>$</span><input id="saturday-sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="Saturday sales"></span><label class="off-toggle"><input type="checkbox" aria-label="Off Saturday"><span>Off</span></label></div>
+					<div class="day-row"><label class="day-name" for="sunday-sales">Sunday</label><span class="money-input"><span>$</span><input id="sunday-sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="Sunday sales"></span><label class="off-toggle"><input type="checkbox" aria-label="Off Sunday"><span>Off</span></label></div>
+				</div>
+				<div class="rate-panel">
+					<div class="rate-copy"><strong>Commission rate</strong><span>Percentage earned from total sales</span></div>
+					<label class="rate-input"><input id="rate" type="number" min="0" max="100" step="0.1" inputmode="decimal" value="12" aria-label="Commission rate percentage"><span>%</span></label>
+				</div>
+				<div class="results" aria-live="polite" aria-atomic="true">
+					<div class="result-card"><span class="result-label">Total weekly sales</span><strong class="result-value" id="total">$0.00</strong></div>
+					<div class="result-card highlight"><span class="result-label">Your commission for the week</span><strong class="result-value" id="commission">$0.00</strong></div>
+				</div>
+				<p class="footnote">Commission is calculated as total weekly sales multiplied by your rate.</p>
+			</section>
+		</main>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
